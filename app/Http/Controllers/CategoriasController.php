@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Category;
-//mandamos a traer modelo de categorias 
-class ControllerCategori extends Controller
+use App\Models\categorias;
+use Illuminate\Http\Request;
+
+class CategoriasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,7 @@ class ControllerCategori extends Controller
      */
     public function index()
     {
-        //para llamar todas nuestra categorias select * from categories ;
-        $categories = Category::all();
-        return response()->json(['categorias' => $categories]);
+        //
     }
 
     /**
@@ -38,28 +37,28 @@ class ControllerCategori extends Controller
     public function store(Request $request)
     {
         //
+        $categories = Category::all();
+        return response()->json(['categorias' => $categories]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\categorias  $categorias
      * @return \Illuminate\Http\Response
      */
-    public function show(ControllerCategory $category ,$id)
+    public function show( $categorias)
     {
-         //select * fromm categories as c where c.id =
-        return Category::findOrfail($id);       
-        //return response()->json(['categoria' => $category]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\categorias  $categorias
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(categorias $categorias)
     {
         //
     }
@@ -68,10 +67,10 @@ class ControllerCategori extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\categorias  $categorias
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, categorias $categorias)
     {
         //
     }
@@ -79,10 +78,10 @@ class ControllerCategori extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\categorias  $categorias
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(categorias $categorias)
     {
         //
     }

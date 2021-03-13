@@ -9,5 +9,14 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'description'];
+    protected $fillable = [
+        'name',
+        'descrption',
+        'image'
+    ];
+
+    //nuestras relaciones una categoria tiene uno o muchos post
+    public function Post(){
+        return $this->belongsTo(Post::class);
+    } 
 }

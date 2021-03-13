@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\tags;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +21,6 @@ class DatabaseSeeder extends Seeder
         User::Factory(100)->create();
         Category::Factory(100)->create();
         Post::Factory(100)->create();
+        Tags::factory(100)->create();
     }
 }
