@@ -17,5 +17,16 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::apiResource('category', 'App\Http\Controllers\ControllerCategori');
+Route::apiResource('Category', 'App\Http\Controllers\ControllerCategori');
 
+//Rutas De categorias
+//Route::apiResource('categories','ControllerCategory');
+Route::apiResource('Category','App\Http\Controllers\ControllerCategory');
+//Route::get('category/{id}','CategoryController@show');
+ 
+//slider
+Route::get('posthome','PostController@sliderPost');
+
+//Post
+Route::get('categoryPost/{id}','PostController@CategoryPost');
+Route::apiResource('posts','PostController');

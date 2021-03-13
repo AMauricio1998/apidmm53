@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
-//mandamos a traer modelo de categorias 
-class ControllerCategori extends Controller
+use App\Models\tags;
+
+class TagsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class ControllerCategori extends Controller
      */
     public function index()
     {
-        //para llamar todas nuestra categorias select * from categories ;
-        $categories = Category::all();
-        return response()->json(['categorias' => $categories]);
+        //
     }
 
     /**
@@ -46,11 +44,9 @@ class ControllerCategori extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(ControllerCategory $category ,$id)
+    public function show(tags $tags)
     {
-         //select * fromm categories as c where c.id =
-        return Category::findOrfail($id);       
-        //return response()->json(['categoria' => $category]);
+        //
     }
 
     /**
@@ -59,7 +55,7 @@ class ControllerCategori extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(tags $tags)
     {
         //
     }
@@ -71,7 +67,7 @@ class ControllerCategori extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, tags $tags)
     {
         //
     }
@@ -82,7 +78,7 @@ class ControllerCategori extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(tags $tags)
     {
         //
     }

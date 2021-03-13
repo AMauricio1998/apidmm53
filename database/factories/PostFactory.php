@@ -25,11 +25,9 @@ class PostFactory extends Factory
             //
             'title' =>$this->faker->sentence,
             'slug' =>$this->faker->slug,
-            'descripcion' =>$this->faker->text(800),
+            'descripcion' =>$this->faker->text(6),
             'image' =>$this->faker->imageUrl(1280, 720),
-            'metatag' =>$this->faker->text(7),
-            'autor' =>$this->faker->sentence,
-            'date' =>$this->faker->dateTime(),
+            'extract' =>$this->faker->text(7),
             //declaramos la llave foranea
             'user_id' =>rand(1,100),
             'categori_id' =>rand(1,100),

@@ -19,14 +19,13 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->longText('descripcion');
             $table->string('image');
-            $table->string('metatag');
-            $table->string('autor');
-            $table->dateTime('date');
+            $table->string('extract');
+            $table->enum('status', [0,1,2])->default(0);
             //declarar llaves foraneas dentro de la migracion
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            
             $table->unsignedBigInteger('categori_id');
+            
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('categori_id')->references('id')->on('categories');
 
             $table->timestamps();
